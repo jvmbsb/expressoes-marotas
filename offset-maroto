@@ -1,0 +1,7 @@
+//checa se uma layer existe e muda o shift center para a posição da layer
+try{
+  thisComp.layer("layer_name");
+  exists = thisComp.layer("layer_name").transform.position;
+}catch(err){
+  exists = [false,false];
+}
