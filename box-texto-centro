@@ -1,0 +1,11 @@
+// Usar no Anchor Point
+// Lembrar de centralizar o anchor point, centralizar o parágrafo e alinhar ao centro vertical e horizontalmente
+
+boxTop = this.sourceRectAtTime().top; 
+// Posição do topo da caixa do texto
+
+boxHeight = this.sourceRectAtTime().height; 
+// Altura da caixa do texto
+
+// Offset anchor para baido do topo da caixa usando metade da altura da caixa 
+[value[0], boxTop + boxHeight/2 ];
