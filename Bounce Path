@@ -1,0 +1,15 @@
+t1 =mask(1).maskPath.key(1).time;
+t2 =mask(1).maskPath.key(2).time;
+freq = 2;
+t = time-t2;
+decay = 1.5;
+t1 =mask("Mask 1").maskPath.key(1).time;
+t2 =mask("Mask 1").maskPath.key(2).time;
+if (time < t2){
+a = 1;
+}
+else {
+a = Math.cos(freq*t*2*Math.PI)/Math.exp(decay*t);
+}
+m = linear(a, -1, 1, t2, t1);
+mask("Mask 1").maskPath.valueAtTime(m)
