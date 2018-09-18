@@ -1,0 +1,5 @@
+//Orienta a rotação a partir da posição do null
+src = thisComp.layer("LAYER_MASTER");
+v = (position - src.position);
+comp = Math.atan2(v[1], v[0]);
+radiansToDegrees(comp) - 90;
