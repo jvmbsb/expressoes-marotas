@@ -1,0 +1,8 @@
+//Altera o valor de um keyframe de acordo com uma layer de escala global, mudando o valor de certo keyframe somente se houver algum valor
+//diferente de 0. Não altera quando for 0 porque 0 * ou / por qualquer coisa continua 0
+
+var globalScale = thisComp.layer("LAYER_SCALE_GLOBAL").transform.scale;
+var scaleFactor = globalScale[0] / 100;
+var amountSlider = thisComp.layer("LAYER_CONTROLE").effect("EFEITO_SLIDER_AQUI")("ADBE Slider Control-0001");
+value / 100 * amountSlider * scaleFactor;
+
