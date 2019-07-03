@@ -8,3 +8,22 @@ if (numKeys >1 && time > key(numKeys).time){
   valueAtTime(t1 + t)
 }else
   value
+  
+  
+  //Outra versão, essa tem pingpong
+  try{
+timeStart = thisProperty.key(1).time;
+duration = thisProperty.key(thisProperty.numKeys).time-timeStart;
+pingPong = true; //mudar esse valor pra "false" se não quiser pingpong 
+quant=Math.floor((time-timeStart)/duration);
+  if(quant<0) quant = 0
+  if(quant%2 == 1 && pingPong == true){   t = 2*timeStart+ (quant+1)*duration - time;
+}
+else{
+  t = time-quant*duration;
+}
+}
+catch(err){
+  t = time;
+}
+thisProperty.valueAtTime(t)
