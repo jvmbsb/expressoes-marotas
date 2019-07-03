@@ -10,7 +10,7 @@ if (numKeys >1 && time > key(numKeys).time){
   value
   
   
-  //Outra versão, essa tem pingpong
+//Outra versão, essa tem pingpong
   try{
 timeStart = thisProperty.key(1).time;
 duration = thisProperty.key(thisProperty.numKeys).time-timeStart;
