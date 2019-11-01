@@ -1,0 +1,13 @@
+//adicionar no Color linkando ao SourceText
+
+
+function hexToColor(theHex){
+  var r = theHex >> 16;
+  var g = (theHex & 0x00ff00) >> 8;
+  var b = theHex & 0xff;
+  return [r/255,g/255,b/255,1];
+}
+
+txt = thisComp.layer("layer_aleatoria").text.sourceText;
+myHex = (parseInt(txt,16));
+hexToColor(myHex);
