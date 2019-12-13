@@ -1,0 +1,5 @@
+if (thisComp.layer("line_02").text.sourceText == "") value=124;
+else if (thisComp.layer("line_03").text.sourceText == "") value=167;
+else {
+value=211
+}
