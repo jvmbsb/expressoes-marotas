@@ -1,2 +1,3 @@
 paranaue = thisComp.layer("layer_aleatoria").text.sourceText;
-if (paranaue == "") 0 else 100
+if (paranaue == "") 0
+  else 100
