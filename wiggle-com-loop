@@ -7,3 +7,13 @@ t = time % loopTime;
 wiggle1 = wiggle(freq, amp, 1, 0.5, t);
 wiggle2 = wiggle(freq, amp, 1, 0.5, t - loopTime);
 linear(t, 0, loopTime, wiggle1, wiggle2)
+
+//Outro código para rotation
+
+var loopDuration = 5; // in seconds
+var wiggleFreq = 1;
+var wiggleAmp = 200;
+var loopedTime = time % loopDuration;
+var wiggle1 = wiggle( wiggleFreq, wiggleAmp, 1, 0.5, loopedTime );
+var wiggle2 = wiggle( wiggleFreq, wiggleAmp, 1, 0.5, loopedTime - loopDuration );
+value + time * ( 360 / loopDuration ) + linear( loopedTime, 0, loopDuration, wiggle1, wiggle2 );
