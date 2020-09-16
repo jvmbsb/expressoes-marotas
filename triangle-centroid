@@ -1,0 +1,9 @@
+//Calcula o centro real de um triangulo, funciona com shape layers triangulares
+
+var sRect = sourceRectAtTime();
+var trianglePoints = [
+	[ sRect.left + sRect.width * 0.5, sRect.top ],
+	[ sRect.left, sRect.top + sRect.height ],
+	[ sRect.left + sRect.width, sRect.top + sRect.height ],
+];
+trianglePoints.reduce( ( average, point ) => average + point, [0,0] ) / 3;
