@@ -1,0 +1,25 @@
+var easeIn = function(power){return function(t){return Math.pow(t, power)}};
+var easeOut = function(power){return function(t){return 1 - Math.abs(Math.pow(t-1, power))}};
+var easeInOut = function(power){return function(t){return t < 0.5 ? easeIn(power)(t*2)/2 : easeOut(power)(t*2 - 1)/2+0.5}};
+var txt = thisComp.layer("metrics");  //metrics é a layer utilizada como medida
+var durationFrames = 50;
+
+//utilizei para fazer uma transição que seguisse o tamanho da camada responsiva sem invasão de layer.
+var valueStart = -txt.sourceRectAtTime().height+1080/2.4;
+var valueEnd = txt.sourceRectAtTime().height+1080/2;
+
+var power = 10; // 1=linear, 2=Quad, 3=Cubic, 4=Quart, 5=Quint, 10 etc
+var dur = framesToTime(durationFrames);
+var valueMid = value; // value[0] for properties with multiple values
+var layerDuration = outPoint - inPoint;
+var tStart = linear(time-inPoint,0,dur,0,1);
+var tEnd = linear((outPoint-time - framesToTime(1)),0,dur,1,0);
+var expStart = easeOut(power)(tStart);
+var expEnd = easeIn(power)(tEnd);
+var valueAnimatedStart = valueStart + (valueMid-valueStart)*expStart;
+var valueAnimatedEnd = valueMid - (valueMid-valueStart)*expEnd;
+if(time < (layerDuration/2+inPoint)){
+valueAnimatedStart;
+}else{
+valueAnimatedEnd;
+}
