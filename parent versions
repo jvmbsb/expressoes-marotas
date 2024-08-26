@@ -1,0 +1,8 @@
+var version = comp("master").layer("PROJECT-PROPERTIES").effect("version")("Menu").value; //link com o Dropdown Menu Control da sua camada de controle
+var result;
+try {
+    result = comp("master").layer("PROJECT-PROPERTIES").effect("FILL-v0" + version)("Color"); //retornando o argumento "version" para completar a versão do FILL
+} catch (err) {
+    result = [1, 1, 1, 1];
+}
+result;
